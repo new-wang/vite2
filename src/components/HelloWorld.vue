@@ -1,11 +1,33 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, useAttrs, useSlots } from 'vue'
 
-defineProps({
+ const props = defineProps({
   msg: String
 })
+console.log(props)
+
+// 获取上下文
+//  useSlots useAttrs
+// const ctx = useAttrs()
+// const ctx2 = useSlots()
+// console.log(ctx,ctx2)
+
+// 定义事件
+const emit = defineEmits(['myclick'])
+const onclick = () => {
+  emit("myclick")
+}
 
 const count = ref(0)
+
+// 对外暴露
+defineExpose({
+  someMethod(){
+    console.log('some message from helloworld')
+  }
+})
+
+
 </script>
 
 <template>
@@ -31,6 +53,11 @@ const count = ref(0)
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+
+
+  <button @click="emit('myclick')"> emit </button>
+  <button @click="onclick"> emit </button>
+
 </template>
 
 <style scoped>
