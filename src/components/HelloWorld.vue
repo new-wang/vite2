@@ -1,10 +1,10 @@
 <script setup>
-import { ref, useAttrs, useSlots } from 'vue'
+import { ref, useAttrs, useSlots } from "vue";
 
- const props = defineProps({
-  msg: String
-})
-console.log(props)
+const props = defineProps({
+  msg: String,
+});
+console.log(props);
 
 // 获取上下文
 //  useSlots useAttrs
@@ -13,25 +13,26 @@ console.log(props)
 // console.log(ctx,ctx2)
 
 // 定义事件
-const emit = defineEmits(['myclick'])
+const emit = defineEmits(["myclick"]);
 const onclick = () => {
-  emit("myclick")
-}
+  emit("myclick");
+};
 
-const count = ref(0)
+const count = ref(0);
 
 // 对外暴露
 defineExpose({
-  someMethod(){
-    console.log('some message from helloworld')
-  }
-})
+  someMethod() {
+    console.log("some message from helloworld");
+  },
+});
 
 // 请求
-fetch('/api/getUsers',{'name':'dadd'}).then(res=>res.json()).then(data=>{
-  console.log('userData',data)
-})
-
+fetch("/api/getUsers", { name: "dadd" })
+  .then((res) => res.json())
+  .then((data) => {
+    console.log("userData", data);
+  });
 </script>
 
 <template>
@@ -58,10 +59,10 @@ fetch('/api/getUsers',{'name':'dadd'}).then(res=>res.json()).then(data=>{
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
 
+  <button @click="emit('myclick')">emit</button>
+  <button @click="onclick">emit</button>
 
-  <button @click="emit('myclick')"> emit </button>
-  <button @click="onclick"> emit </button>
-
+  <p @click="$store.commit('add')">$store-counter:  {{ $store.state.counter }}</p>
 </template>
 
 <style scoped>
