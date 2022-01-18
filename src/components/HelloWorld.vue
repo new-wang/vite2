@@ -27,6 +27,10 @@ defineExpose({
   }
 })
 
+// 请求
+fetch('/api/getUsers',{'name':'dadd'}).then(res=>res.json()).then(data=>{
+  console.log('userData',data)
+})
 
 </script>
 
