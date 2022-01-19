@@ -63,10 +63,5 @@ fetch("/api/getUsers", { name: "dadd" })
   <button @click="onclick">emit</button>
 
   <p @click="$store.commit('add')">$store-counter:  {{ $store.state.counter }}</p>
+  <el-button>element3 btn</el-button>
 </template>
-
-<style scoped>
-a {
-  color: #42b983;
-}
-</style>
