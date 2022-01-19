@@ -8,14 +8,17 @@ import router from './router'
 import store from './store'
 
 // 全局引入element3
-import Element3 from 'element3'
-import 'element3/lib/theme-chalk/index.css'
+// import Element3 from 'element3'
+// import 'element3/lib/theme-chalk/index.css'
 
 // 全局样式
 import 'styles/index.scss'
 
+// element3
+import element3 from './plugins/element3'
+
 createApp(App)
 .use(router)
 .use(store)
-.use(Element3)
+.use(element3)
 .mount('#app')
