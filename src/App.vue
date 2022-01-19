@@ -1,5 +1,5 @@
 <template>
-  "vite": "^2.7.2"
+  <!-- "vite": "^2.7.2" -->
 
   <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
   <!-- <HelloWorld msg="Hello Vue 3 + Vite" ref="hw" @myclick="onmyclick" /> -->
