@@ -62,6 +62,9 @@ fetch("/api/getUsers", { name: "dadd" })
   <button @click="emit('myclick')">emit</button>
   <button @click="onclick">emit</button>
 
-  <p @click="$store.commit('add')">$store-counter:  {{ $store.state.counter }}</p>
+  <p @click="$store.commit('add')">
+    $store-counter: {{ $store.state.counter }}
+  </p>
   <el-button>element3 btn</el-button>
+  <el-input></el-input>
 </template>
