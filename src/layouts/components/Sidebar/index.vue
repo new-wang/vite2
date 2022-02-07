@@ -25,9 +25,9 @@ import { computed } from "@vue/runtime-core";
 import { useRoute } from "vue-router";
 import { routes } from "@/router";
 
+// 当前激活菜单
 const activeMenu = computed(() => {
   const route = useRoute();
-  console.log(route);
   const { meta, path } = route;
   if (meta.activeMenu) {
     return meta.activeMenu;
